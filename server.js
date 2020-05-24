@@ -23,7 +23,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => { res.send(db.users)})  // was database not db, I get an error if I leave database
+app.get('/', (req, res) => { res.send('is is working')})  // was database not db, I get an error if I leave database
 app.post('/signin', signin.handleSignin(db, bcrypt)) // Dependency injection
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
 app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db)})
